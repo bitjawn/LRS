@@ -6,7 +6,7 @@
 		Script Dependencies
 		<ul>
 			<li>
-				<a href="https://github.com/bitjawn/Colors">Color Console Text</a>
+				<a href="https://github.com/bitjawn/Colors">Color Console Text Scripts</a>
 			</li>
 		</ul>
 	</li>
