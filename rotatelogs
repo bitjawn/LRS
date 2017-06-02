@@ -1,0 +1,25 @@
+#!/bin/bash
+
+ROOT_UID=0
+NOT_ROOT=121
+FAILED_ROT=120
+
+if [ ${UID} -ne ${ROOT_UID} ];
+then
+    printf "\t`red "Error: "``white "Must run this script with root level privilege"`\n\n"
+    exit $NOT_ROOT
+fi
+
+logrotate -fv /etc/logrotate.conf
+
+if [ $? -gt 0 ];
+then
+    printf "\t`red "Error: "``white "Log rotation failed"`\n\n"
+    exit $FAILED_ROT
+else
+    printf "\t`green "Logs Rotated Successfully"`\n\n"
+    sleep 4
+    clear
+    exit 0
+fi
+
